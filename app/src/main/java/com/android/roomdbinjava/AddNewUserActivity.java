@@ -23,12 +23,12 @@ public class AddNewUserActivity extends AppCompatActivity {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                saveNewUser(firstNameInput.getText().toString(), lastNameInput.getText().toString());
+                saveNewUser(firstNameInput.getText().toString(), Integer.parseInt(lastNameInput.getText().toString()));
             }
         });
     }
 
-    private void saveNewUser(String firstName, String lastName) {
+    private void saveNewUser(String firstName, int lastName) {
         AppDatabase db  = AppDatabase.getDbInstance(this.getApplicationContext());
 
         User user = new User();

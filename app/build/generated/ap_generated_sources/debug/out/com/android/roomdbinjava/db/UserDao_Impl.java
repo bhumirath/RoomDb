@@ -40,11 +40,7 @@ public final class UserDao_Impl implements UserDao {
         } else {
           stmt.bindString(2, value.name);
         }
-        if (value.lastName == null) {
-          stmt.bindNull(3);
-        } else {
-          stmt.bindString(3, value.lastName);
-        }
+        stmt.bindLong(3, value.lastName);
       }
     };
     this.__deletionAdapterOfUser = new EntityDeletionOrUpdateAdapter<User>(__db) {
@@ -100,7 +96,7 @@ public final class UserDao_Impl implements UserDao {
         _item = new User();
         _item.uid = _cursor.getInt(_cursorIndexOfUid);
         _item.name = _cursor.getString(_cursorIndexOfName);
-        _item.lastName = _cursor.getString(_cursorIndexOfLastName);
+        _item.lastName = _cursor.getInt(_cursorIndexOfLastName);
         _result.add(_item);
       }
       return _result;

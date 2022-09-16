@@ -39,7 +39,8 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.MyView
         User user = userList.get(position);
         holder.id.setText(""+user.getId());
         holder.tvFirstName.setText(this.userList.get(position).name);
-        holder.tvLastName.setText(this.userList.get(position).lastName);
+        holder.tvLastName.setText(String.valueOf(this.userList.get(position).lastName));
+        //holder.tvLastName.setText(this.userList.get(position).lastName);
     }
 
     @Override

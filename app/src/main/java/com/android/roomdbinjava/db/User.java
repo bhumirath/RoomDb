@@ -14,7 +14,7 @@ public class User {
     public String name;
 
     @ColumnInfo(name = "price")
-    public String lastName;
+    public int lastName;
 
     public long getId() {
         return uid;
